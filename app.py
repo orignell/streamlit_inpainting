@@ -2,7 +2,7 @@ import streamlit as st
 from utils.help import predict
 
 '''
-# Image In-Painting
+# Image Inpainting #722
 '''
 
 
