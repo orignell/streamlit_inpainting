@@ -1,5 +1,4 @@
-tensorflow
-tensorflow_io
-pandas
 numpy
-matplotlib
+Pillow
+requests
+streamlit

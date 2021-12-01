@@ -1,2 +1,0 @@
-def addition():
-    return "bhoo!"
