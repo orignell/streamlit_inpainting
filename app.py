@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.help import predict
+from utils.help import predict, get_image_download_link
 
 '''
 # Image Inpainting #722
@@ -13,8 +13,8 @@ ___This project's goal was to create a model which would allow one to add colour
 '''
 ## Lets see how well our model works 😎
 
-1. Let's take a black and white picture of one of us
-2. Then we can upload it so that we can feed it to our model
+1. Let's take a black and white picture
+2. Now we can upload it so that we can feed it to our model
 3. What does our model predict? 🤔
 '''
 
@@ -24,9 +24,9 @@ ___This project's goal was to create a model which would allow one to add colour
 
 img_file = st.file_uploader(
     "Please upload your image here",
-    ["jpg", "png", "jpeg", "JPEG"],
+    ["JPG", "PNG", "JPEG"],
     help="Should not exceed 200MB",
-)
+    )
 
 col1, col2 = st.columns(2)
 
@@ -37,12 +37,13 @@ if img_file is not None:
     col1.image(img_file, caption='Original image', use_column_width=True)
 
 #col2.header("Image originale")
-if col2.button('Show colorised 🔥'):
+if col2.button('Show colourised 🔥'):
 
     if img_file is not None:
 
         rgb_img = predict(img_file)
         col2.image(rgb_img, caption='Colorised image', use_column_width=True)
+        col2.markdown(get_image_download_link(rgb_img), unsafe_allow_html=True)
 
     else:
         col2.write(f"Please upload a valid black and white image")

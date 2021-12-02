@@ -3,6 +3,7 @@ from PIL import Image
 import requests
 import json
 import base64
+from io import BytesIO
 
 
 def predict(img_file):  #uploaded as PIL object
@@ -37,3 +38,11 @@ def predict(img_file):  #uploaded as PIL object
     rgb_img = rgb_img.resize((og_width, og_height))
 
     return rgb_img
+
+
+def get_image_download_link(img, text='Download colourised image'):
+    buffered = BytesIO()
+    img.save(buffered, format="JPEG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    href = f'<a href="data:file/txt;base64,{img_str}" download="colourised.jpeg">{text}</a>'
+    return href
