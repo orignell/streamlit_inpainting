@@ -1,6 +1,11 @@
 import streamlit as st
 from utils.help import predict, get_image_download_link
 
+st.set_page_config(page_title="Abracadabra",
+                   page_icon="📷",
+                   layout="centered",
+                   initial_sidebar_state="auto")
+
 '''
 # Image Inpainting #722
 '''
