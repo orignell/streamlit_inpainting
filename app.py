@@ -42,7 +42,7 @@ if col2.button('Show colourised 🔥'):
     if img_file is not None:
 
         rgb_img = predict(img_file)
-        col2.image(rgb_img, caption='Colorised image', use_column_width=True)
+        col2.image(rgb_img, caption='Colourised image', use_column_width=True)
         col2.markdown(get_image_download_link(rgb_img), unsafe_allow_html=True)
 
     else:
