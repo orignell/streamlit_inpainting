@@ -7,7 +7,7 @@ from utils.help import predict, get_image_download_link
 
 
 '''
-___This project's goal was to create a model which would allow one to add colour to old black and white images.___
+___This project's goal is to create a model which will add colour to old black and white images.___
 '''
 
 '''
